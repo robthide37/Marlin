@@ -774,7 +774,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define CLASSIC_JERK
+//#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -1069,7 +1069,7 @@
 #define Y_MIN_POS -20
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + 15
-#define Y_MAX_POS Y_BED_SIZE - 20
+#define Y_MAX_POS Y_BED_SIZE - 10
 #define Z_MAX_POS 400
 
 /**
