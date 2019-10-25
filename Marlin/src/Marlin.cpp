@@ -146,7 +146,7 @@
 #endif
 
 #if ENABLED(CANCEL_OBJECTS)
-  #include "feature/cancel_objects.h"
+  #include "feature/cancel_object.h"
 #endif
 
 #if HAS_FILAMENT_SENSOR
