@@ -476,9 +476,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // TL all metal BMG V6 combo tuned for 200 C with 50W heater
-  #define DEFAULT_Kp 13.55
-  #define DEFAULT_Ki 1.25
-  #define DEFAULT_Kd 36.61
+  #define DEFAULT_Kp 15.23
+  #define DEFAULT_Ki 1.39
+  #define DEFAULT_Kd 41.61
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -530,10 +530,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  //120V 750W silicone heater into 4mm mirror plate
-  #define DEFAULT_bedKp 28
-  #define DEFAULT_bedKi 4.73
-  #define DEFAULT_bedKd 110.63
+  //120V 750W silicone heater into spring steel with PEI
+  #define DEFAULT_bedKp 35.17
+  #define DEFAULT_bedKi 6.36
+  #define DEFAULT_bedKd 129.54
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
