@@ -457,6 +457,12 @@
   #include "stm32/pins_STM3R_MINI.h"            // STM32F1                                env:STM32F103RE
 #elif MB(GTM32_PRO_VB)
   #include "stm32/pins_GTM32_PRO_VB.h"          // STM32F1                                env:STM32F103RE
+#elif MB(GTM32_MINI_A30)
+  #include "stm32/pins_GTM32_MINI_A30.h"        // STM32F1                                env:STM32F103RE
+#elif MB(GTM32_MINI)
+  #include "stm32/pins_GTM32_MINI.h"            // STM32F1                                env:STM32F103RE 
+#elif MB(GTM32_REV_B)
+  #include "stm32/pins_GTM32_REV_B.h"           // STM32F1                                env:STM32F103RE
 #elif MB(MORPHEUS)
   #include "stm32/pins_MORPHEUS.h"              // STM32F1                                env:STM32F103RE
 #elif MB(CHITU3D)
@@ -523,6 +529,8 @@
   #include "stm32/pins_LERDGE_X.h"              // STM32F4                                env:STM32F4
 #elif MB(VAKE403D)
   #include "stm32/pins_VAKE403D.h"              // STM32F4                                env:STM32F4
+#elif MB(FYSETC_S6)
+  #include "stm32/pins_FYSETC_S6.h"             // STM32F4                                env:FYSETC_S6
 
 //
 // ARM Cortex M7
