@@ -486,9 +486,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // TL all metal BMG V6 combo tuned for 200 C with 50W heater
-  #define DEFAULT_Kp 15.23
-  #define DEFAULT_Ki 1.39
-  #define DEFAULT_Kd 41.61
+  #define DEFAULT_Kp 15.19
+  #define DEFAULT_Ki 1.37
+  #define DEFAULT_Kd 42.04
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
