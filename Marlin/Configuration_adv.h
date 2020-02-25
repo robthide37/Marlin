@@ -1664,7 +1664,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 0
+#define MINIMUM_STEPPER_PULSE 0
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -1678,7 +1678,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MAXIMUM_STEPPER_RATE 400000
+#define MAXIMUM_STEPPER_RATE 5000000
 
 // @section temperature
 
