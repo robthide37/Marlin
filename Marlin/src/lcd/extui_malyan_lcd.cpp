@@ -47,7 +47,7 @@
 
 #define DEBUG_MALYAN_LCD
 
-#include "extensible_ui/ui_api.h"
+#include "extui/ui_api.h"
 
 #include "ultralcd.h"
 #include "../sd/cardreader.h"
@@ -483,6 +483,7 @@ namespace ExtUI {
   void onLoadSettings(const char*) {}
   void onConfigurationStoreWritten(bool) {}
   void onConfigurationStoreRead(bool) {}
+  void OnPidTuning(const result_t) {}
 }
 
 #endif // MALYAN_LCD
