@@ -39,11 +39,18 @@
 #define DISABLE_DEBUG
 
 //
+// Note: MKS Robin board is using SPI2 interface.
+//
+//#define SPI_MODULE 2
+#define ENABLE_SPI2
+
+//
 // Limit Switches
 //
 #define X_STOP_PIN                          PA15
 #define Y_STOP_PIN                          PA12
-#define Z_MIN_PIN                           PA11
+//#define Z_MIN_PIN                           PA11 // Z MIN
+#define Z_MIN_PIN                           PE6   // MT_DET2 for BLTOUCH
 #define Z_MAX_PIN                           PC4
 
 #ifndef FIL_RUNOUT_PIN
@@ -61,17 +68,17 @@
 #define Y_STEP_PIN                          PE0
 #define Y_DIR_PIN                           PB9
 
-#define Z_ENABLE_PIN                        PB8
-#define Z_STEP_PIN                          PB5
-#define Z_DIR_PIN                           PB4
+#define Z_ENABLE_PIN                        PA3 // Switched pins with E1 for proper G34 alignment
+#define Z_STEP_PIN                          PA6
+#define Z_DIR_PIN                           PA1
 
 #define E0_ENABLE_PIN                       PB3
 #define E0_STEP_PIN                         PD6
 #define E0_DIR_PIN                          PD3
 
-#define E1_ENABLE_PIN                       PA3
-#define E1_STEP_PIN                         PA6
-#define E1_DIR_PIN                          PA1
+#define E1_ENABLE_PIN                       PB8
+#define E1_STEP_PIN                         PB5
+#define E1_DIR_PIN                          PB4
 
 //
 // Temperature Sensors
@@ -88,6 +95,11 @@
 #define HEATER_BED_PIN                      PA0   // HOT BED
 
 #define FAN_PIN                             PB1   // FAN
+
+//
+// Servos
+//
+#define SERVO0_PIN                          PA8   // For BLTOUCH
 
 //
 // Thermocouples
@@ -120,11 +132,19 @@
  * to let the bootloader init the screen.
  */
 #if ENABLED(FSMC_GRAPHICAL_TFT)
-  #define FSMC_CS_PIN                       PD7   // NE4
-  #define FSMC_RS_PIN                       PD11  // A0
+  //@
+  //#define DOGLCD_MOSI -1 // prevent redefine Conditionals_post.h
+  //#define DOGLCD_SCK -1
 
-  #define LCD_RESET_PIN                     PC6   // FSMC_RST
-  #define NO_LCD_REINIT                           // Suppress LCD re-initialization
+  #define FSMC_CS_PIN        PD7    // NE4
+  #define FSMC_RS_PIN        PD11   // A0
+
+  #define LCD_USE_DMA_FSMC //
+  #define FSMC_DMA_DEV DMA2
+  #define FSMC_DMA_CHANNEL DMA_CH5
+
+  //#define LCD_RESET_PIN      PF6
+  //#define NO_LCD_REINIT             // Suppress LCD re-initialization
 
   #define LCD_BACKLIGHT_PIN                 PD13
 
@@ -134,4 +154,12 @@
     #define TOUCH_MISO_PIN                  PB14  // SPI2_MISO
     #define TOUCH_MOSI_PIN                  PB15  // SPI2_MOSI
   #endif
+#endif
+
+#define SPI_FLASH
+#if ENABLED(SPI_FLASH)
+	#define 	W25QXX_CS_PIN		PB12
+	#define 	W25QXX_MOSI_PIN		PB15
+	#define 	W25QXX_MISO_PIN		PB14
+	#define 	W25QXX_SCK_PIN		PB13
 #endif
