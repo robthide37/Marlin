@@ -31,7 +31,7 @@
  * -----------------
  *
  * Helpful G-code references:
- *  - http://marlinfw.org/meta/gcode
+ *  - https://marlinfw.org/meta/gcode
  *  - https://reprap.org/wiki/G-code
  *  - http://linuxcnc.org/docs/html/gcode.html
  *
@@ -726,7 +726,7 @@ private:
     static void M240();
   #endif
 
-  #if HAS_LCD_CONTRAST
+  #if HAS_LCD_CONTRAST || TFT_HAS_COLOR
     static void M250();
   #endif
 
@@ -938,7 +938,7 @@ private:
     static void M918();
   #endif
 
-  #if HAS_DIGIPOTSS || HAS_MOTOR_CURRENT_PWM || EITHER(DIGIPOT_I2C, DAC_STEPPER_CURRENT)
+  #if HAS_DIGIPOTSS || HAS_MOTOR_CURRENT_PWM || HAS_I2C_DIGIPOT || ENABLED(DAC_STEPPER_CURRENT)
     static void M907();
     #if HAS_DIGIPOTSS || ENABLED(DAC_STEPPER_CURRENT)
       static void M908();

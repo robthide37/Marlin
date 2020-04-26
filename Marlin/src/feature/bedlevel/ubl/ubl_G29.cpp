@@ -38,7 +38,7 @@
   #include "../../../gcode/gcode.h"
   #include "../../../libs/least_squares_fit.h"
 
-  #if HOTENDS > 1
+  #if HAS_MULTI_HOTEND
     #include "../../../module/tool_change.h"
   #endif
 
@@ -451,8 +451,8 @@
               SERIAL_ECHO(g29_pos.y);
               SERIAL_ECHOLNPGM(").\n");
             }
-            const xy_pos_t near = g29_pos + probe.offset_xy;
-            probe_entire_mesh(near, parser.seen('T'), parser.seen('E'), parser.seen('U'));
+            const xy_pos_t near_probe_xy = g29_pos + probe.offset_xy;
+            probe_entire_mesh(near_probe_xy, parser.seen('T'), parser.seen('E'), parser.seen('U'));
 
             report_current_position();
             probe_deployed = true;
