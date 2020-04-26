@@ -41,8 +41,8 @@
 //
 // EEPROM
 //
-#define FLASH_EEPROM_EMULATION
-//#define SDCARD_EEPROM_EMULATION
+//#define FLASH_EEPROM_EMULATION
+#define SDCARD_EEPROM_EMULATION
 
 //
 // Limit Switches
@@ -158,9 +158,9 @@
 //
 // SD Card
 //
-//#ifndef SDCARD_CONNECTION
-//  #define SDCARD_CONNECTION              ONBOARD
-//#endif
+#ifndef SDCARD_CONNECTION
+  #define SDCARD_CONNECTION              ONBOARD
+#endif
 
 #define SDIO_SUPPORT
 #define SD_DETECT_PIN                       PD12
