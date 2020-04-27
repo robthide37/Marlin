@@ -222,6 +222,7 @@
 //
 // SD Support
 //
+
 #ifndef SDCARD_CONNECTION
   #define SDCARD_CONNECTION              ONBOARD
 #endif
