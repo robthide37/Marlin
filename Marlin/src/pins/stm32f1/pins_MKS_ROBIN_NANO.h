@@ -54,8 +54,8 @@
 //
 #define X_STOP_PIN                          PA15
 #define Y_STOP_PIN                          PA12
-//#define Z_MIN_PIN                           PA11 // Z MIN
-#define Z_MIN_PIN                           PE6   // MT_DET2 for BLTOUCH
+#define Z_MIN_PIN                           PA11 // Z MIN
+//#define Z_MIN_PIN                           PE6   // MT_DET2 for BLTOUCH
 #define Z_MAX_PIN                           PC4
 
 #ifndef FIL_RUNOUT_PIN
@@ -73,17 +73,17 @@
 #define Y_STEP_PIN                          PE0
 #define Y_DIR_PIN                           PB9
 
-#define Z_ENABLE_PIN                        PA3 // Switched pins with E1 for proper G34 alignment
-#define Z_STEP_PIN                          PA6
-#define Z_DIR_PIN                           PA1
+#define Z_ENABLE_PIN                        PB8
+#define Z_STEP_PIN                          PB5
+#define Z_DIR_PIN                           PB4
 
 #define E0_ENABLE_PIN                       PB3
 #define E0_STEP_PIN                         PD6
 #define E0_DIR_PIN                          PD3
 
-#define E1_ENABLE_PIN                       PB8
-#define E1_STEP_PIN                         PB5
-#define E1_DIR_PIN                          PB4
+#define E1_ENABLE_PIN                       PA3
+#define E1_STEP_PIN                         PA6
+#define E1_DIR_PIN                          PA1
 
 //
 // Temperature Sensors
