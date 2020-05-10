@@ -39,9 +39,9 @@
 #if ENABLED(EEPROM_SETTINGS)
   // EEPROM type may be defined by compile flags, configs, HALs, or pins
   // Set additional flags to let HALs choose in their Conditionals_post.h
-  #if ANY(FLASH_EEPROM_EMULATION, SRAM_EEPROM_EMULATION, SDCARD_EEPROM_EMULATION)
+  #if ANY(FLASH_EEPROM_EMULATION, SRAM_EEPROM_EMULATION, SDCARD_EEPROM_EMULATION, QSPI_EEPROM)
     #define USE_EMULATED_EEPROM 1
-  #elif ANY(I2C_EEPROM, SPI_EEPROM, QSPI_EEPROM)
+  #elif ANY(I2C_EEPROM, SPI_EEPROM)
     #define USE_WIRED_EEPROM    1
   #else
     #define USE_FALLBACK_EEPROM 1
@@ -1549,6 +1549,9 @@
   #define HAS_E_STEPPER_ENABLE 1
 #endif
 
+#if ANY_AXIS_HAS(HW_SERIAL)
+  #define HAS_TMC_HW_SERIAL 1
+#endif
 #if ANY_AXIS_HAS(SW_SERIAL)
   #define HAS_TMC_SW_SERIAL 1
 #endif
@@ -2335,9 +2338,13 @@
   #undef MESH_MAX_Y
 #endif
 
-#if defined(PROBE_PT_1_X) && defined(PROBE_PT_2_X) && defined(PROBE_PT_3_X) && defined(PROBE_PT_1_Y) && defined(PROBE_PT_2_Y) && defined(PROBE_PT_3_Y)
+#define _POINT_COUNT (defined(PROBE_PT_1_X) + defined(PROBE_PT_2_X) + defined(PROBE_PT_3_X) + defined(PROBE_PT_1_Y) + defined(PROBE_PT_2_Y) + defined(PROBE_PT_3_Y))
+#if _POINT_COUNT == 6
   #define HAS_FIXED_3POINT 1
+#elif _POINT_COUNT > 0
+  #error "For 3-Point Leveling all XY points must be defined (or none for the defaults)."
 #endif
+#undef _POINT_COUNT
 
 /**
  * Buzzer/Speaker
